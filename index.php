@@ -1,2 +1,2 @@
 <?php
-header('Location: page/home.php');
+header('Location: ./auth/login.php');
