@@ -31,12 +31,12 @@ include "../utils/connect.php";
 
             <div class="form-group">
                 <label for="cin">CIN</label>
-                <input type="text" name="cin" id="cin" autocomplete="no">
+                <input placeholder="cin..." type="text" name="cin" id="cin" autocomplete="no">
             </div>
 
             <div class="form-group">
                 <label for="password">passowrd</label>
-                <input type="text" name="password" id="password" autocomplete="no">
+                <input placeholder="mot de passe..." type="text" name="password" id="password" autocomplete="no">
             </div>
 
             <div class="form-group">
