@@ -26,3 +26,9 @@
   background: var(--primary-accent1);
   filter: drop-shadow(0mm 4mm 4mm rgba(115, 115, 115, 0.15));
 }
+
+@media screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+}

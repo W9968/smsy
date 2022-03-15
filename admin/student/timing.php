@@ -7,12 +7,11 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
 <html lang="en">
 
 <head>
-
+    <script src="../../javascript/fallbacks.js"></script>
 </head>
 
 <body>
     <p>timing for student</p>
-    <script src="../../javascript/student.js?v=<?php echo time(); ?>"></script>
 </body>
 
 </html>

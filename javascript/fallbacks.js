@@ -6,3 +6,6 @@ if (document.location.pathname === '/smsy/admin/student/note.php')
 
 if (document.location.pathname === '/smsy/admin/student/timing.php')
   document.location.assign('/smsy/admin/')
+
+if (document.location.pathname === '/smsy/admin/administrator/manage-users.php')
+  document.location.assign('/smsy/admin/')
