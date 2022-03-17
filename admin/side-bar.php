@@ -19,7 +19,7 @@ include "../utils/connect.php";
             foreach (array(
                 "student" => ["information" => "information", "emploi de temp" => "timing", "note matiere" => "note"],
                 "teacher" => ["classes" => "classes", "emploi de temp" => "timing"],
-                "administrator" => ["users" => "manage-users", "Bloquer" => "block"]
+                "administrator" => ["users" => "manage-users"]
             ) as $key => $value) {
                 echo "<p>$key</p>";
                 echo "<div>";

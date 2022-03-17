@@ -36,6 +36,9 @@ include "../utils/connect.php";
                     case 'a-users':
                         return include "./administrator/manage-users.php";
                         break;
+                    case 'a-users-add':
+                        return include "./administrator/add-users.php";
+                        break;
                 }
             } else echo "no no"
             ?>

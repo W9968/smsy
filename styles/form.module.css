@@ -1,0 +1,17 @@
+@import './@main.css';
+
+.add-user-modal {
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  padding: 24px;
+  display: none;
+  height: 210px;
+  position: fixed;
+  border-radius: 15px;
+  align-items: center;
+  flex-direction: column;
+  background: var(--primary);
+  justify-content: space-between;
+  transform: translate(-50%, -50%);
+}
