@@ -13,7 +13,7 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
 </head>
 
 <body>
-    <form action="../functions/add_user_data.php" method="post" class="form">
+    <form action="../functions/add_user_data.php" method="post" class="form" enctype="multipart/form-data">
         <h1>ajouter un utilisateur</h1>
         <div>
 
@@ -91,8 +91,12 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
             </div>
 
             <div class="form-group">
-
-
+                <label for="file_upload">image de profile</label>
+                <input type="file" name="file_upload" id="file_upload" accept="image/*">
+                <div id="image-translate">
+                    <img id="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                    <p id="picture-name">photo de profile</p>
+                </div>
             </div>
 
 
@@ -102,6 +106,8 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
 
         </div>
     </form>
+
+    <script src="../javascript/fileReader.js"></script>
 </body>
 
 </html>

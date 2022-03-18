@@ -14,6 +14,7 @@
   display: flex;
   margin: 10px 0px;
   flex-direction: column;
+  position: relative;
 }
 
 .form-grid {
@@ -84,6 +85,38 @@
   border-radius: 50%;
   background-color: var(--dominant);
   border: 2px solid var(--dominant);
+}
+
+#file_upload {
+  opacity: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+}
+
+#image-translate {
+  display: flex;
+  border: none;
+  height: 60px;
+  outline: none;
+  margin: 5px 0px;
+  font-size: 14px;
+  padding: 0px 14px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid var(--primary-accent2);
+}
+
+#profile-pic {
+  height: 100%;
+}
+
+#picture-name {
+  font-size: 16px;
+  margin-left: 15px;
 }
 
 .form-group > button {
