@@ -30,8 +30,6 @@ include "../utils/connect.php";
             }
             ?>
         </div>
-        <div class="account">
-        </div>
     </div>
 </body>
 

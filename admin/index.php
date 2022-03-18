@@ -9,7 +9,7 @@ include "../utils/connect.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/backoffice.module.css?v=<?php time(); ?>">
+    <link rel="stylesheet" href="../styles/backoffice.module.css?v=<?php echo time(); ?>">
     <title>Dashboard</title>
 </head>
 

@@ -5,7 +5,7 @@ $db_name = "school-management-system";
 $db_password = "";
 
 try {
-    $cnx = new PDO("mysql:host=$db_server; dbname=$db_name", $db_username, $db_password);
+    $db = new PDO("mysql:host=$db_server; dbname=$db_name", $db_username, $db_password);
 } catch (PDOException $e) {
     echo "error" . $e->getMessage();
     die();

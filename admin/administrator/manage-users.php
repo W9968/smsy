@@ -40,6 +40,7 @@ include "../functions/fetch_user_data.php";
                         <th>eamil</th>
                         <th>nom</th>
                         <th>prenom</th>
+                        <th>sex</th>
                         <th>cite</th>
                         <th>state</th>
                         <th>address</th>
@@ -58,6 +59,7 @@ include "../functions/fetch_user_data.php";
                         echo "<td>" . $value['email'] . "</td>";
                         echo "<td>" . $value['name'] . "</td>";
                         echo "<td>" . $value['prenom'] . "</td>";
+                        echo "<td>" . $value['gender'] . "</td>";
                         echo "<td>" . $value['city'] . "</td>";
                         echo "<td>" . $value['state'] . "</td>";
                         echo "<td>" . $value['address_1'] . "</td>";

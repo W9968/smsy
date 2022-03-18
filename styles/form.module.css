@@ -1,17 +1,116 @@
 @import './@main.css';
 
-.add-user-modal {
-  top: 50%;
-  left: 50%;
-  z-index: 10;
-  padding: 24px;
-  display: none;
-  height: 210px;
-  position: fixed;
-  border-radius: 15px;
-  align-items: center;
+.form {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.form > h1 {
+  margin-bottom: 28px;
+  text-transform: capitalize;
+}
+
+.form-group {
+  display: flex;
+  margin: 10px 0px;
   flex-direction: column;
-  background: var(--primary);
-  justify-content: space-between;
-  transform: translate(-50%, -50%);
+}
+
+.form-grid {
+  display: grid;
+  grid-column-gap: 25px;
+  grid-template-columns: auto auto;
+}
+
+.form-group > label {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: var(--primary-accent3);
+}
+
+.form-group > input {
+  border: none;
+  height: 46px;
+  outline: none;
+  margin: 5px 0px;
+  font-size: 14px;
+  padding: 0px 14px;
+  border-radius: 5px;
+  border: 2px solid var(--primary-accent2);
+}
+
+.form-group > input:focus {
+  border: 2px solid var(--primary-accent3);
+}
+
+.form-group > .selection {
+  border: none;
+  height: 46px;
+  outline: none;
+  margin: 5px 0px;
+  font-size: 14px;
+  padding: 0px 14px;
+  border-radius: 5px;
+  border: 2px solid var(--primary-accent2);
+}
+
+.form-group > span {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  text-transform: capitalize;
+  justify-content: flex-start;
+}
+
+.form-group > span > input[type='radio'] {
+  margin: 0;
+  font: inherit;
+  width: 1.15em;
+  height: 1.15em;
+  appearance: none;
+  margin-right: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--primary-accent3);
+  border: 2px solid var(--primary-accent3);
+}
+
+.form-group > span > input[type='radio']:checked {
+  margin: 0;
+  font: inherit;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 15px;
+  border-radius: 50%;
+  background-color: var(--dominant);
+  border: 2px solid var(--dominant);
+}
+
+.form-group > button {
+  border: none;
+  height: 48px;
+  outline: none;
+  display: flex;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 15px;
+  font-family: 600;
+  margin-top: 24px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  background: var(--dominant);
+  color: var(--primary-accent1);
+}
+
+.form > .form-group > button:hover {
+  background: var(--dominant-accent1);
+}
+
+@media screen AND (max-width: 750px) {
+  .form {
+    width: 100%;
+  }
 }
