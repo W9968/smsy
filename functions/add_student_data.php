@@ -12,7 +12,6 @@ $add2       = $_POST['add2'];
 $city       = $_POST['cite'];
 $state      = $_POST['state'];
 $zip        = $_POST['zip'];
-$role       = $_POST['role'];
 
 $file_name = $_FILES['file_upload']['name'];
 $file_temp_name  = $_FILES['file_upload']['tmp_name'];
@@ -22,11 +21,11 @@ $upload_path = "../uploads/" . $new_image_name;
 if (isset($_POST['ajouter'])) {
 
 
-    $statement = "INSERT INTO table_users
+    $statement = "INSERT INTO table_students
     (id, _uuid, email, password, name, prenom, gender, 
-    profile_picture, address_1, address_2, city, state, zip, guard, restriction) 
+    profile_picture, address_1, address_2, city, state, zip,  restriction) 
     VALUES (NULL, :_uuid, :email, :passowrd, :name, :prenom, :gender, 
-    :profile_picture, :address_1, :address_2, :city, :state , :zip , :role, '0')";
+    :profile_picture, :address_1, :address_2, :city, :state , :zip , '0')";
 
     $query = $db->prepare($statement);
     $query->bindParam(':_uuid', $cin);
@@ -41,7 +40,6 @@ if (isset($_POST['ajouter'])) {
     $query->bindParam(':city', $city);
     $query->bindParam(':state', $state);
     $query->bindParam(':zip', $zip);
-    $query->bindParam(':role', $role);
 
     move_uploaded_file($file_temp_name, $upload_path);
 

@@ -13,7 +13,7 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
 </head>
 
 <body>
-    <form action="../functions/add_user_data.php" method="post" class="form" enctype="multipart/form-data">
+    <form action="../functions/add_student_data.php" method="post" class="form" enctype="multipart/form-data">
         <h1>ajouter un utilisateur</h1>
         <div>
 
@@ -35,23 +35,14 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
 
             <div class="form-grid">
                 <div class="form-group">
-                    <label for="cin">CIN</label>
-                    <input type="number" placeholder="xxxxxxxx" name="cin" id="cin" required>
+                    <label for="add1">address 1</label>
+                    <input type="text" placeholder="addresse..." name="add1" id="add1" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="password">mot de passe</label>
-                    <input type="password" placeholder="mot de passe..." name="password" id="password" required>
+                    <label for="add2">address 2</label>
+                    <input type="text" placeholder="optional..." name="add2" id="add2">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label for="add1">address 1</label>
-                <input type="text" placeholder="addresse..." name="add1" id="add1" required>
-            </div>
-
-            <div class="form-group">
-                <label for="add2">address 2</label>
-                <input type="text" placeholder="optional..." name="add2" id="add2">
             </div>
 
             <div class="form-grid">
@@ -70,14 +61,14 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
                     <label for="zip">code postale</label>
                     <input type="text" placeholder="code postale..." name="zip" id="zip" required>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>type</label>
                     <select name="role" class="selection" required>
                         <option value="" disabled selected>selectionner option</option>
                         <option value="student">etudiant</option>
                         <option value="teacher">enseignant</option>
                     </select>
-                </div>
+                </div> -->
             </div>
 
             <div class="form-group">

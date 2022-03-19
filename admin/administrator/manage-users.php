@@ -7,7 +7,7 @@ if (isset($_POST['ajouter-user'])) {
     header('Location: ./administrator/add-users.php');
 }
 
-include "../functions/fetch_user_data.php";
+include "../functions/fetch_student_data.php";
 
 ?>
 
@@ -55,7 +55,7 @@ include "../functions/fetch_user_data.php";
                     <?php
                     foreach ($queries as $value) {
                         echo "<tr>";
-                        echo "<td>" . $value['_uuid'] . "</td>";
+                        echo "<td>" . $value['cin'] . "</td>";
                         echo "<td>" . $value['email'] . "</td>";
                         echo "<td>" . $value['name'] . "</td>";
                         echo "<td>" . $value['prenom'] . "</td>";
@@ -65,8 +65,7 @@ include "../functions/fetch_user_data.php";
                         echo "<td>" . $value['address_1'] . "</td>";
                         if ($value['address_2'] != null) echo "<td>" . $value['address_2']  . "</td>";
                         else echo "<td><p style=color:#979797>N/A</p></td>";
-
-                        echo "<td>" . $value['guard'] . "</td>";
+                        echo "<td>" . $value['role'] . "</td>";
                         echo "<td><button id=edit><i style='width:18px;' data-feather='edit'></i></button></td>";
                         echo "<td><button id=delete><i style='width:18px;' data-feather='trash'></i></button></td>";
                         if ($value['restriction'] == 0) echo "<td><button id=block><i style='width:18px;' data-feather='shield'></i></button></td>";
@@ -82,11 +81,11 @@ include "../functions/fetch_user_data.php";
             echo "<div class=modal-delete>
                 <p>
                     <i style='align-self:start;height:24px;width:24px;color:#e91f63;margin-bottom:5px' data-feather='x-square'></i>
-                    <br/>Vous êtes sûr de supprimer cet utilisateur [" . $value['_uuid'] . "] ?
+                    <br/>Vous êtes sûr de supprimer cet utilisateur [" . $value['_uid'] . "] ?
                 </p>
                 <div class=modal-btn-grid >
                     <button class=modal-cancel-delete >annuler</button>
-                    <a href='../functions/delete_account.php?_id=" . $value['id'] . "' >
+                    <a href='../functions/delete_account.php?_id=" . $value['_uid'] . "' >
                         <button class=modal-confirm-delete >supprimer</button>
                     </a>
                 </div>
