@@ -27,8 +27,6 @@ if (isset($_POST['connecter'])) {
         if ($rowCounnt == 1 && !empty($row)) {
             $_SESSION['loggedin'] = "true";
             $_SESSION['CurrentUserRole'] = $row['role'];
-            $cookie_value = md5($row['cin'] . $row['password']);
-            setcookie("AUTH_SESSON", $cookie_value, time() + (86400 * 30), "/");
             header('Location: ../admin/');
         } else {
             print("invalid login");

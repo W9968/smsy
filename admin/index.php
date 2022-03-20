@@ -26,6 +26,7 @@ if ($_SESSION['loggedin'] != "true") {
         </div>
         <div class="content">
             <?php
+
             if (isset($_COOKIE['routing'])) {
                 switch ($_COOKIE['routing']) {
                         // routing for student
