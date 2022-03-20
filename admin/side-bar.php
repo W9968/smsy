@@ -13,8 +13,8 @@ include "../utils/connect.php";
 
 <body>
     <div class="nav-bar">
-        <h1>EPI SMS</h1>
-        <div class="links" id="link-usage">
+        <h2>EPI</h2>
+        <!-- <div class="links" id="link-usage">
             <?php
             foreach (array(
                 "student" => ["information" => "information", "emploi de temp" => "timing", "note matiere" => "note"],
@@ -29,7 +29,10 @@ include "../utils/connect.php";
                 echo "</div>";
             }
             ?>
-        </div>
+        </div> -->
+        <form action="../functions/logout.php" method="POST">
+            <button name="">deconnecter</button>
+        </form>
     </div>
 </body>
 

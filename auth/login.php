@@ -1,5 +1,5 @@
 <?php
-include "../utils/connect.php";
+include "../functions/login.php"
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ include "../utils/connect.php";
 
 <body>
     <div class="container">
-        <form action="" method="post" class="form">
+        <form method="post" class="form">
 
             <div class="form-title">
                 <div>
@@ -31,12 +31,12 @@ include "../utils/connect.php";
 
             <div class="form-group">
                 <label for="cin">CIN</label>
-                <input placeholder="cin..." type="text" name="cin" id="cin" autocomplete="no">
+                <input placeholder="cin..." type="text" name="cin" id="cin" autocomplete="no" required>
             </div>
 
             <div class="form-group">
                 <label for="password">passowrd</label>
-                <input placeholder="mot de passe..." type="text" name="password" id="password" autocomplete="no">
+                <input placeholder="mot de passe..." type="password" name="password" id="password" autocomplete="no" required>
             </div>
 
             <div class="form-group">
@@ -44,7 +44,7 @@ include "../utils/connect.php";
             </div>
 
             <div class="form-group">
-                <button name="submit">
+                <button name="connecter">
                     <i style="width:18px;opacity:0;" data-feather="arrow-right"></i>
                     <p>se connecter</p>
                     <i style="width:18px;" data-feather="arrow-right"></i>

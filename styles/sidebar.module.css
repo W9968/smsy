@@ -7,8 +7,7 @@
   justify-content: space-between;
 }
 
-.nav-bar > h1 {
-  font-size: 32px;
+.nav-bar > h2 {
   letter-spacing: -2px;
 }
 
