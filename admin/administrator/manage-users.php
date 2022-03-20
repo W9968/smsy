@@ -37,7 +37,7 @@ include "../functions/fetch_student_data.php";
                 <thead>
                     <tr>
                         <th>cin</th>
-                        <th>eamil</th>
+                        <th>email</th>
                         <th>nom</th>
                         <th>prenom</th>
                         <th>sex</th>
@@ -46,6 +46,7 @@ include "../functions/fetch_student_data.php";
                         <th>address</th>
                         <th>address2</th>
                         <th>role</th>
+                        <th>naissance</th>
                         <th style="width:24px"></th>
                         <th style="width:24px"></th>
                         <th style="width:24px"></th>
@@ -53,25 +54,29 @@ include "../functions/fetch_student_data.php";
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($queries as $value) {
-                        echo "<tr>";
-                        echo "<td>" . $value['cin'] . "</td>";
-                        echo "<td>" . $value['email'] . "</td>";
-                        echo "<td>" . $value['name'] . "</td>";
-                        echo "<td>" . $value['prenom'] . "</td>";
-                        echo "<td>" . $value['gender'] . "</td>";
-                        echo "<td>" . $value['city'] . "</td>";
-                        echo "<td>" . $value['state'] . "</td>";
-                        echo "<td>" . $value['address_1'] . "</td>";
-                        if ($value['address_2'] != null) echo "<td>" . $value['address_2']  . "</td>";
-                        else echo "<td><p style=color:#979797>N/A</p></td>";
-                        echo "<td>" . $value['role'] . "</td>";
-                        echo "<td><button id=edit><i style='width:18px;' data-feather='edit'></i></button></td>";
-                        echo "<td><button id=delete><i style='width:18px;' data-feather='trash'></i></button></td>";
-                        if ($value['restriction'] == 0) echo "<td><button id=block><i style='width:18px;' data-feather='shield'></i></button></td>";
-                        else echo "<td><button id=block><i style='width:18px;' data-feather='shield-off'></i></button></td>";
-                        echo "</tr>";
-                    }
+                    if (empty($queries))
+                        echo "no data";
+                    else
+                        foreach ($queries as $value) {
+                            echo "<tr>";
+                            echo "<td>" . $value['cin'] . "</td>";
+                            echo "<td>" . $value['email'] . "</td>";
+                            echo "<td>" . $value['first_name'] . "</td>";
+                            echo "<td>" . $value['first_name'] . "</td>";
+                            echo "<td>" . $value['gender'] . "</td>";
+                            echo "<td>" . $value['city'] . "</td>";
+                            echo "<td>" . $value['state'] . "</td>";
+                            echo "<td>" . $value['adress1'] . "</td>";
+                            if ($value['adress2'] != null) echo "<td>" . $value['adress2']  . "</td>";
+                            else echo "<td><p style=color:#979797>N/A</p></td>";
+                            echo "<td>" . $value['role'] . "</td>";
+                            echo "<td>" . $value['birth'] . "</td>";
+                            echo "<td><button id=edit><i style='width:18px;' data-feather='edit'></i></button></td>";
+                            echo "<td><button id=delete><i style='width:18px;' data-feather='trash'></i></button></td>";
+                            if ($value['restriction'] == 0) echo "<td><button id=block><i style='width:18px;' data-feather='shield'></i></button></td>";
+                            else echo "<td><button id=block><i style='width:18px;' data-feather='shield-off'></i></button></td>";
+                            echo "</tr>";
+                        }
                     ?>
                 </tbody>
             </table>

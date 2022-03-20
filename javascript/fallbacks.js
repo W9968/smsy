@@ -12,3 +12,6 @@ if (document.location.pathname === '/smsy/admin/administrator/manage-users.php')
 
 if (document.location.pathname === '/smsy/admin/administrator/add-users.php')
   document.location.assign('/smsy/admin/')
+
+if (document.location.pathname === '/smsy/admin/side-bar.php')
+  document.location.assign('/smsy/admin/')

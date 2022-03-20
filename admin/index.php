@@ -39,7 +39,7 @@ if ($_SESSION['loggedin'] != "true") {
                     case 's-timing':
                         return include "./student/timing.php";
                         break;
-                        // routing for admin
+                        // routing for administrator
                     case 'a-users':
                         return include "./administrator/manage-users.php";
                         break;

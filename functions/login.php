@@ -26,7 +26,8 @@ if (isset($_POST['connecter'])) {
 
         if ($rowCounnt == 1 && !empty($row)) {
             $_SESSION['loggedin'] = "true";
-            $_SESSION['CurrentUserRole'] = $row['role'];
+            $_SESSION['currentUserUuid'] = $row['cin'];
+            $_SESSION['currentUserRole'] = $row['role'];
             header('Location: ../admin/');
         } else {
             print("invalid login");

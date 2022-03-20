@@ -61,14 +61,7 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
                     <label for="zip">code postale</label>
                     <input type="text" placeholder="code postale..." name="zip" id="zip" required>
                 </div>
-                <!-- <div class="form-group">
-                    <label>type</label>
-                    <select name="role" class="selection" required>
-                        <option value="" disabled selected>selectionner option</option>
-                        <option value="student">etudiant</option>
-                        <option value="teacher">enseignant</option>
-                    </select>
-                </div> -->
+
             </div>
 
             <div class="form-group">

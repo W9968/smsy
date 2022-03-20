@@ -1,10 +1,15 @@
 @import './@main.css';
 
+body {
+  background: var(--primary);
+}
+
 .container {
-  width: 100%;
+  width: 1500px;
   padding: 15px;
   height: 100vh;
   display: flex;
+  margin: 0 auto;
   min-height: 100vh;
   flex-direction: column;
   background: var(--primary);
@@ -28,4 +33,10 @@
 
 .container > .content::-webkit-scrollbar {
   width: 0px;
+}
+
+@media screen AND (max-width: 1500px) {
+  .container {
+    width: 100%;
+  }
 }
