@@ -15,8 +15,11 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
 <body>
     <form action="../functions/add_student_data.php" method="post" class="form" enctype="multipart/form-data">
         <h1>ajouter un utilisateur</h1>
-        <div>
 
+        <div class="fom-group">
+            <p class="intro">en tant qu'un adminitrateur, vous serez capable d'ajouter tout les types d'utilisateur.<br />seuls les comptes de type <code>`TEACHER`, `STUDENT`</code> requis plus d'information a remplir par le moderateur.</p>
+        </div>
+        <div>
             <div class="form-grid">
                 <div class="form-group">
                     <label for="nom">nom</label>
@@ -28,9 +31,15 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="email">email</label>
-                <input type="email" placeholder="foulen@foulen.exp" name="email" id="email" required>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="email">email</label>
+                    <input type="email" placeholder="foulen@foulen.exp" name="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="cin">cin</label>
+                    <input type="text" placeholder="xxxxxxxx" name="cin" id="cin" maxlength="8" required>
+                </div>
             </div>
 
             <div class="form-grid">
@@ -59,18 +68,27 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
             <div class="form-grid">
                 <div class="form-group">
                     <label for="zip">code postale</label>
-                    <input type="text" placeholder="code postale..." name="zip" id="zip" required>
+                    <input type="text" placeholder="code postale..." name="zip" id="zip" minlength="4" required>
                 </div>
-
+                <div class="form-group">
+                    <label>type</label>
+                    <select name="role" class="selection" required>
+                        <option value="" disabled selected>selectionner option</option>
+                        <option value="STUDENT">etudaint</option>
+                        <option value="TEACHER">enseignant</option>
+                        <option value="MODERATOR">Moderateur</option>
+                        <option value="ADMINISTRATOR">Administrateur</option>
+                    </select>
+                </div>
             </div>
 
             <div class="form-group">
                 <label>sex</label>
                 <span>
-                    <input type="radio" name="r1" value="femme" required> femme
+                    <input type="radio" name="r1" value="MALE" required> homme
                 </span>
                 <span>
-                    <input type="radio" name="r1" value="homme" required> homme
+                    <input type="radio" name="r1" value="FEMALE" required> femme
                 </span>
             </div>
 

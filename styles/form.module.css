@@ -6,8 +6,23 @@
 }
 
 .form > h1 {
-  margin-bottom: 28px;
+  margin-bottom: 5px;
   text-transform: capitalize;
+}
+
+.intro {
+  margin-bottom: 24px;
+  color: var(--primary-accent3);
+}
+
+.intro > code {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 7px;
+  border-radius: 5px;
+  font-family: monospace;
+  color: var(--primary-accent1);
+  background: var(--secondary);
 }
 
 .form-group {
@@ -144,6 +159,19 @@
 
 @media screen AND (max-width: 750px) {
   .form {
+    width: 100%;
+  }
+
+  .form-grid {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .form-group {
+    flex: 1;
     width: 100%;
   }
 }
