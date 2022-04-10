@@ -2,6 +2,7 @@
 
 .form {
   width: 700px;
+  padding: 15px;
   margin: 0 auto;
 }
 
@@ -27,7 +28,7 @@
 
 .form-group {
   display: flex;
-  margin: 10px 0px;
+  margin: 10px 0;
   flex-direction: column;
   position: relative;
 }
@@ -45,12 +46,11 @@
 }
 
 .form-group > input {
-  border: none;
   height: 46px;
   outline: none;
-  margin: 5px 0px;
+  margin: 5px 0;
   font-size: 14px;
-  padding: 0px 14px;
+  padding: 0 14px;
   border-radius: 5px;
   border: 2px solid var(--primary-accent2);
 }
@@ -59,13 +59,13 @@
   border: 2px solid var(--primary-accent3);
 }
 
-.form-group > .selection {
-  border: none;
+.form-group > label > .selection {
+  width: 100%;
   height: 46px;
   outline: none;
-  margin: 5px 0px;
+  margin: 5px 0;
   font-size: 14px;
-  padding: 0px 14px;
+  padding: 0 14px;
   border-radius: 5px;
   border: 2px solid var(--primary-accent2);
 }
@@ -79,7 +79,6 @@
 }
 
 .form-group > span > input[type='radio'] {
-  margin: 0;
   font: inherit;
   width: 1.15em;
   height: 1.15em;
@@ -92,7 +91,6 @@
 }
 
 .form-group > span > input[type='radio']:checked {
-  margin: 0;
   font: inherit;
   width: 1.15em;
   height: 1.15em;
@@ -113,12 +111,11 @@
 
 #image-translate {
   display: flex;
-  border: none;
   height: 60px;
   outline: none;
-  margin: 5px 0px;
+  margin: 5px 0;
   font-size: 14px;
-  padding: 0px 14px;
+  padding: 0 14px;
   border-radius: 5px;
   align-items: center;
   justify-content: flex-start;
@@ -142,7 +139,7 @@
   cursor: pointer;
   font-size: 16px;
   padding: 0 15px;
-  font-family: 600;
+  font-weight: 600;
   margin-top: 24px;
   border-radius: 5px;
   margin-bottom: 5px;
@@ -155,6 +152,25 @@
 
 .form > .form-group > button:hover {
   background: var(--dominant-accent1);
+}
+
+.fiche {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.fiche > p {
+  flex: 1;
+  padding: 15px;
+}
+
+.fiche > p:first-child {
+  border-right: 2px solid var(--primary-accent2);
+}
+
+.fiche:not(:last-child) {
+  border-bottom: 2px solid var(--primary-accent2);
 }
 
 @media screen AND (max-width: 750px) {

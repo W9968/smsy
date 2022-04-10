@@ -8,7 +8,13 @@
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background: var(--primary);
+  background: linear-gradient(
+    245deg,
+    hsl(350deg 33% 93%) 0%,
+    hsl(227deg 52% 94%) 33%,
+    hsl(227deg 52% 94%) 67%,
+    hsl(350deg 33% 93%) 100%
+  );
 }
 
 .form {

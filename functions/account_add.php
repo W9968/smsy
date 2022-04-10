@@ -31,7 +31,7 @@ if (isset($_POST['ajouter'])) {
 
         if ($query->execute([$cin, $password, $role, $new_image_name, $first_name, $last_name, $email, $state, $city, $zip, $gender, $add1, $add2])) {
             move_uploaded_file($file_temp_name, $upload_path);
-            header('Location: ../admin/administrator/manage-users.php');
+            header('Location: ../admin/mod');
         }
     } catch (PDOException $e) {
         echo $e->getMessage();

@@ -1,5 +1,5 @@
 <?php
-include "../functions/login.php"
+include "../functions/login_user.php"
 ?>
 
 <!DOCTYPE html>

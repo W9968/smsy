@@ -1,19 +1,12 @@
-<?php
-$cookie_value = "a-users-add";
-setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../styles/form.module.css?v=<?php echo time() ?>">
-    <script src="../../javascript/fallbacks.js"></script>
+    <link rel="stylesheet" href="../../styles/form.module.css?v=<?php echo time() ?>">
 </head>
 
 <body>
-    <form action="../functions/add_student_data.php" method="post" class="form" enctype="multipart/form-data">
+    <form action="../../functions/account_add.php" method="post" class="form" enctype="multipart/form-data">
         <h1>ajouter un utilisateur</h1>
 
         <div class="fom-group">
@@ -74,9 +67,8 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
                     <label>type</label>
                     <select name="role" class="selection" required>
                         <option value="" disabled selected>selectionner option</option>
-                        <option value="STUDENT">etudaint</option>
+                        <option value="STUDENT">etudiant</option>
                         <option value="TEACHER">enseignant</option>
-                        <option value="MODERATOR">Moderateur</option>
                         <option value="ADMINISTRATOR">Administrateur</option>
                     </select>
                 </div>
@@ -109,7 +101,7 @@ setcookie("routing", $cookie_value, time() + (86400 * 30), "/");
         </div>
     </form>
 
-    <script src="../javascript/fileReader.js"></script>
+    <script src="../../javascript/fileReader.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,6 @@
 @import './@main.css';
 
 .form-container {
-  width: 100%;
-  height: 100%;
   display: flex;
   margin: 0 auto;
   max-width: 100%;
@@ -22,13 +20,7 @@
   text-transform: capitalize;
 }
 
-.header > div {
-  display: grid;
-  grid-gap: 24px;
-  grid-template-columns: 1fr 1fr;
-}
-
-.header > div > button {
+.header > button {
   border: none;
   height: 36px;
   outline: none;
@@ -46,7 +38,7 @@
   color: var(--primary-accent1);
 }
 
-.header > div > button:hover {
+.header > button:hover {
   background: var(--dominant-accent1);
 }
 
@@ -96,7 +88,15 @@ table > tbody > tr > td {
   white-space: nowrap;
 }
 
-table > tbody > tr > td > button,
+table > tbody > tr > td > img {
+  width: 32px;
+  height: 32px;
+  border-radius: 42px;
+}
+
+#edit,
+#delete,
+#assign,
 table > tbody > tr > td > button {
   border: none;
   display: flex;
@@ -111,6 +111,7 @@ table > tbody > tr > td > button {
 * modal delete element
 */
 
+.modal-edit,
 .modal-delete {
   top: 50%;
   left: 50%;
@@ -128,6 +129,7 @@ table > tbody > tr > td > button {
   transform: translate(-50%, -50%);
 }
 
+.modal-edit > p,
 .modal-delete > p {
   font-size: 1rem;
   line-height: 1.6rem;
@@ -142,6 +144,7 @@ table > tbody > tr > td > button {
   grid-template-columns: 1fr 1fr;
 }
 
+.modal-confirm-edit,
 .modal-confirm-delete {
   flex: 1;
   border: none;
@@ -155,6 +158,7 @@ table > tbody > tr > td > button {
   text-transform: capitalize;
 }
 
+.modal-cancel-edit,
 .modal-cancel-delete {
   flex: 1;
   border: none;
