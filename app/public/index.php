@@ -10,6 +10,8 @@ $payload = new UserController();
 $users = $payload->findMany()->fetchAll();
 $count = $payload->findMany()->rowCount();
 
+$revenue = $payload->Revenue();
+
 ?>
 
 <!DOCTYPE html>
@@ -342,7 +344,7 @@ $count = $payload->findMany()->rowCount();
                                     Account balance
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                                    $ 46,760.89
+                                    $ <?php echo $revenue[0] ?>
                                 </p>
                             </div>
                         </div>
