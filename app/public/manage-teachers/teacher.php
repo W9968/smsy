@@ -6,7 +6,7 @@ use App\controllers\TeacherController;
 use App\controllers\GroupeController;
 use App\models\Teacher;
 
-$payload = new TeacherController();
+$payload = new TeacherController('', '');
 $groups = new GroupeController();
 
 $teachers = $payload->getNonAssignedTeacher()->fetchAll();

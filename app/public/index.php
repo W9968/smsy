@@ -23,6 +23,7 @@ if (isset($_POST['logout'])) {
     header("Location: ./auth/");
 }
 
+
 ?>
 
 <!DOCTYPE html>

@@ -6,7 +6,7 @@ use App\controllers\StudentController;
 use App\controllers\GroupeController;
 use App\models\Student;
 
-$payload = new StudentController();
+$payload = new StudentController('', '');
 $groups = new GroupeController();
 
 $students = $payload->getNonAssignedStudent()->fetchAll();
@@ -350,8 +350,9 @@ if (isset($_POST['assign'])) {
 														</div>
 													</td>
 												</tr>
+											<?php } ?>
 										</tbody>
-									<?php } ?>
+
 									</table>
 								</div>
 							</div>
@@ -435,8 +436,9 @@ if (isset($_POST['assign'])) {
 														</div>
 													</td>
 												</tr>
+											<?php } ?>
 										</tbody>
-									<?php } ?>
+
 									</table>
 								</div>
 							</div>

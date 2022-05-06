@@ -18,6 +18,15 @@ class UserController extends AuthController
         }
     }
 
+    public function findOne($id)
+    {
+        try {
+            return DataBase::connect()->query("SELECT * FROM `table_users` WHERE `_uid`='$id'")->fetch();
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
     public function delete(string $id)
     {
         try {

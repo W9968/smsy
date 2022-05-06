@@ -6,7 +6,17 @@ use App\controllers\AuthController;
 
 session_start();
 if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == "true") {
-  header("Location: ../");
+  switch ($_SESSION['role']) {
+    case 'STUDENT':
+      header("Location: ../student-info/");
+      break;
+    case 'TEACHER':
+      header("Location: ../teacher-info/");
+      break;
+    case 'ADMINISTRATOR':
+      header("Location: ../");
+      break;
+  }
 }
 
 if (isset($_POST['login'])) {
@@ -15,7 +25,18 @@ if (isset($_POST['login'])) {
 
   $socket = new AuthController($email, $password);
   $socket->login();
-  header("Location: ../");
+
+  switch ($_SESSION['role']) {
+    case 'STUDENT':
+      header("Location: ../student-info/");
+      break;
+    case 'TEACHER':
+      header("Location: ../teacher-info/");
+      break;
+    case 'ADMINISTRATOR':
+      header("Location: ../");
+      break;
+  }
 }
 
 

@@ -41,11 +41,17 @@ class AuthController
         }
     }
 
+    /**
+     * dans cette cas il faut remplacer walee.test par localhost:8000
+     * car j'ai fais des configuration de proxy sur mon pc pour que 
+     * localhost me redirect sur walee.test
+     */
     public function logout(): void
     {
         $_SESSION['loggedIn'] = "false";
         $_SESSION['role'] = 'GUEST';
         $_SESSION["uuid"] = -1;
-        header("Location: ./login.php");
+        // header("Location: http://walee.test/smsy/app/public/auth/");
+        header("Location: ../auth/");
     }
 }
