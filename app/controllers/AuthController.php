@@ -2,6 +2,10 @@
 
 namespace App\controllers;
 
+use App\helper\DataBase;
+use Exception;
+use PDO;
+
 class AuthController
 {
 
@@ -14,9 +18,10 @@ class AuthController
         $this->password = $password;
     }
 
-    public function login(): void {
+    public function login(): void
+    {
         try {
-            $request = Database::connect()->prepare("SELECT `_uid`, `email`, `mdp`, `role` from `table_users` WHERE `email`=:email AND `mdp`=:pass");
+            $request = Database::connect()->prepare("SELECT `_uid`, `email`, `role` from `table_users` WHERE `email`=:email AND `password`=:pass");
             $request->bindParam("email", $this->email, PDO::PARAM_STR);
             $request->bindValue("pass", $this->password, PDO::PARAM_STR);
             $request->execute();
@@ -31,17 +36,16 @@ class AuthController
             } else {
                 var_dump("wrong");
             }
-
-        } catch (Exception $e){
+        } catch (Exception $e) {
             echo $e->getMessage();
         }
     }
 
-    public function logout() : void {
+    public function logout(): void
+    {
         $_SESSION['loggedIn'] = "false";
         $_SESSION['role'] = 'GUEST';
         $_SESSION["uuid"] = -1;
         header("Location: ./login.php");
     }
-
 }

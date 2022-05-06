@@ -1,3 +1,3 @@
 <?php
 
-header("Location: app/public/index.php");
+header("Location: app/public/auth");

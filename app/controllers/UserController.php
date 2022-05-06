@@ -6,7 +6,7 @@ use App\helper\DataBase;
 use App\models\User;
 use Exception;
 
-class UserController
+class UserController extends AuthController
 {
 
     public function findMany()
