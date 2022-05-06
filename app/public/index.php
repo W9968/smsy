@@ -10,6 +10,11 @@ if ($_SESSION['loggedIn'] == "false") {
     header("Location: ./auth/");
 }
 
+if ($_SESSION['loggedIn'] == "true") {
+    if ($_SESSION['role'] != 'ADMINISTRATOR') {
+        header("Location: 404.html");
+    }
+}
 
 $payload = new UserController('', '');
 $users = $payload->findMany()->fetchAll();
