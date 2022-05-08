@@ -17,7 +17,10 @@ if ($_SESSION['role'] != 'STUDENT') {
 
 $payload = new StudentController('', '');
 $loggedInUser = $payload->findStudentProfile($_SESSION['uuid']);
-$assgined_classes = $payload->getClasses($loggedInUser['class_id'])
+
+var_dump($loggedInUser);
+
+// $assgined_classes = $payload->getClasses($loggedInUser['class_id'])
 
 
 ?>
