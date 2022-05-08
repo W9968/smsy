@@ -18,9 +18,7 @@ if ($_SESSION['role'] != 'STUDENT') {
 $payload = new StudentController('', '');
 $loggedInUser = $payload->findStudentProfile($_SESSION['uuid']);
 
-var_dump($loggedInUser);
-
-// $assgined_classes = $payload->getClasses($loggedInUser['class_id'])
+$assgined_classes = $payload->getClasses($loggedInUser['class_id'])
 
 
 ?>
@@ -109,7 +107,6 @@ var_dump($loggedInUser);
 					<h1 class="mb-4 text-l font-regular text-gray-700 dark:text-gray-200"><?php echo $loggedInUser['cin'] ?></h1>
 					<h1 class="mb-4 text-l font-regular text-gray-700 dark:text-gray-200"><?php echo $loggedInUser['email'] ?></h1>
 					<h1 class="mb-4 text-l font-regular text-gray-700 dark:text-gray-200"><?php echo $loggedInUser['phone'] ?></h1>
-					<h1 class="mb-4 text-l font-regular text-gray-700 dark:text-gray-200"><?php echo $loggedInUser['class_id'] ?></h1>
 					<div class="w-full overflow-hidden mt-8 rounded-lg shadow-xs">
 						<div class="w-full overflow-x-auto">
 

@@ -51,7 +51,7 @@ class UserController extends AuthController
     public function Revenue()
     {
         try {
-            return DataBase::connect()->query("SELECT SUM(`paied`) FROM `table_student`")->fetch();
+            return DataBase::connect()->query("SELECT SUM(`paied`), SUM(`salary`) FROM `table_student`, `table_teacher`")->fetch();
         } catch (Exception $e) {
             return $e->getMessage();
         }

@@ -40,6 +40,7 @@ class TeacherController extends UserController
     {
         try {;
             DataBase::connect()->prepare("INSERT INTO `table_teacher` (`_uid`, `salary`, `class_id`, `user_id`)  VALUES (NULL, ?, ?, ?)")->execute([$req->getSalary(), $req->getClassId(), $req->getUserId()]);
+            DataBase::connect()->prepare("UPDATE `table_users` SET `restriction`='0' WHERE `_uid`=?")->execute([$req->getUserId()]);
             header("Location: .");
         } catch (Exception $e) {
             echo $e->getMessage();

@@ -40,6 +40,7 @@ class StudentController extends UserController
     {
         try {
             DataBase::connect()->prepare("INSERT INTO `table_student` (`_uid`, `class_id`, `user_id`, `paied`, `enrolled`)  VALUES (NULL, ?, ?, ?, current_timestamp())")->execute([$req->getClassId(), $req->getUserId(), $req->getPayment()]);
+            DataBase::connect()->prepare("UPDATE `table_users` SET `restriction`='0' WHERE `_uid`=?")->execute([$req->getUserId()]);
             header("Location: .");
         } catch (Exception $e) {
             echo $e->getMessage();
