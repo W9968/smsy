@@ -46,4 +46,13 @@ class TeacherController extends UserController
             echo $e->getMessage();
         }
     }
+
+    public function findStudentProfile($id)
+    {
+        try {
+            return DataBase::connect()->query("SELECT class_id, cin, profile_picture, first_name, last_name, email, state, city, zip, gender, adress1, adress2, birth, phone, salary, class_name, class_level, dep_id FROM table_users tu JOIN table_teacher ts on tu._uid = ts.user_id JOIN table_class tc on tc._uid = ts.class_id WHERE tu._uid = '$id'")->fetch();
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
 }

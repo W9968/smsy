@@ -18,8 +18,7 @@ if ($_SESSION['role'] != 'STUDENT') {
 $payload = new StudentController('', '');
 $loggedInUser = $payload->findStudentProfile($_SESSION['uuid']);
 
-$assgined_classes = $payload->getClasses($loggedInUser['class_id'])
-
+$assgined_classes = $payload->getClasses($loggedInUser['class_id']);
 
 ?>
 
@@ -103,13 +102,117 @@ $assgined_classes = $payload->getClasses($loggedInUser['class_id'])
 			</header>
 			<main class="h-full overflow-y-auto">
 				<div class="container px-6 mx-auto grid pt-10">
-					<h1 class="mb-4 text-2xl font-semibold capitalize text-gray-700 dark:text-gray-200"><?php echo $loggedInUser['first_name'] . " " . $loggedInUser['last_name'] ?></h1>
-					<h1 class="mb-4 text-l font-regular text-gray-700 dark:text-gray-200"><?php echo $loggedInUser['cin'] ?></h1>
-					<h1 class="mb-4 text-l font-regular text-gray-700 dark:text-gray-200"><?php echo $loggedInUser['email'] ?></h1>
-					<h1 class="mb-4 text-l font-regular text-gray-700 dark:text-gray-200"><?php echo $loggedInUser['phone'] ?></h1>
+					<h1 class="mb-4 text-2xl font-semibold capitalize text-gray-700 dark:text-gray-200">Basic Information</h1>
+					<div class="w-full overflow-hidden mt-8 rounded-lg shadow-xs mb-2">
+						<div class="w-full overflow-x-auto ">
+							<table class="w-full whitespace-no-wrap">
+								<thead>
+									<tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+										<th class="px-4 py-3">Picture</th>
+										<th class="px-4 py-3">Full Nom</th>
+										<th class="px-4 py-3">Email</th>
+										<th class="px-4 py-3">Phone</th>
+										<th class="px-4 py-3">Birth</th>
+										<th class="px-4 py-3">Payment</th>
+									</tr>
+								</thead>
+								<tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+									<tr class="text-gray-700 dark:text-gray-400">
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<img class="object-cover w-8 h-8 rounded-full" src="../../uploads/<?php echo $loggedInUser['profile_picture'] ?>" />
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['first_name'] . " " . $loggedInUser['last_name'] ?></span>
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['cin'] ?></span>
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['phone'] ?></span>
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['birth'] ?></span>
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['paied'] ?></span>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="w-full overflow-hidden mt-8 rounded-lg shadow-xs mb-6">
+						<div class="w-full overflow-x-auto ">
+							<table class="w-full whitespace-no-wrap">
+								<thead>
+									<tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+										<th class="px-4 py-3">Adress 1</th>
+										<th class="px-4 py-3">Adress 2</th>
+										<th class="px-4 py-3">City</th>
+										<th class="px-4 py-3">State</th>
+										<th class="px-4 py-3">Registred</th>
+										<th class="px-4 py-3">Classe</th>
+										<th class="px-4 py-3">Department</th>
+									</tr>
+								</thead>
+								<tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+									<tr class="text-gray-700 dark:text-gray-400">
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['adress1'] ?></span>
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php if ($loggedInUser['adress2']) echo $loggedInUser['adress2'];
+														else echo 'N/A'   ?></span>
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['city'] ?></span>
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['state'] ?></span>
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['enrolled'] ?></span>
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['class_name'] . $loggedInUser['class_level'] ?></span>
+											</div>
+										</td>
+										<td class="px-4 py-3">
+											<div class="flex items-center text-sm">
+												<span><?php echo $loggedInUser['dep_id'] ?></span>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<h1 class="mt-4 mb-2 text-2xl font-semibold capitalize text-gray-700 dark:text-gray-200">Courses Timing</h1>
 					<div class="w-full overflow-hidden mt-8 rounded-lg shadow-xs">
 						<div class="w-full overflow-x-auto">
-
 							<table class="w-full whitespace-no-wrap">
 								<thead>
 									<tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
