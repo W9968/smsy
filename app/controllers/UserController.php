@@ -41,11 +41,18 @@ class UserController extends AuthController
         try {
             DataBase::connect()->prepare("INSERT INTO `table_users` (`_uid`, `cin`, `password`, `role`, `restriction`, `profile_picture`, `first_name`, `last_name`, `email`, `state`, `city`, `zip`, `gender`, `adress1`, `adress2`, `birth`, `phone`, `_createdAt`) 
             VALUES (NULL, ?, ?, ?, '1', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, current_timestamp())")->execute([
-                $req->getCin(), $req->getPassword(), $req->getRole(), $req->getPicture(), $req->getFistName(), $req->getLastName(), $req->getEmail(), $req->getState(), $req->getState(), $req->getZip(), $req->getGender(), $req->getAddress1(), $req->getAddress2(), $req->getBirth(), $req->getPhone()
+                $req->getCin(), $req->getPassword(), $req->getRole(), $req->getPicture(), $req->getFistName(), $req->getLastName(), $req->getEmail(), $req->getState(), $req->getCity(), $req->getZip(), $req->getGender(), $req->getAddress1(), $req->getAddress2(), $req->getBirth(), $req->getPhone()
             ]);
         } catch (Exception $e) {
             echo $e->getMessage();
         }
+    }
+
+    public function update(User $req, $id)
+    {
+        DataBase::connect()->prepare("UPDATE `table_users` SET `cin`=? , `profile_picture`=? , `first_name`=? , `last_name`=? , `email`=? , `state`=? , `city`=? , `zip`=? , `gender`=? , `adress1`=? , `adress2`=? , `birth`=? , `phone`=? , `password`=? WHERE `_uid`=? ")->execute([
+            $req->getCin(), $req->getPicture(), $req->getFistName(), $req->getLastName(), $req->getEmail(), $req->getState(), $req->getCity(), $req->getZip(), $req->getGender(), $req->getAddress1(), $req->getAddress2(), $req->getBirth(), $req->getPhone(), $req->getPassword(), $id
+        ]);
     }
 
     public function Revenue()
